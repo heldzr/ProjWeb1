@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="cadastro.css">
+    <script src="https://kit.fontawesome.com/b09944a1ea.js" crossorigin="anonymous"></script>
+    <script src="navbar.js"></script>
+</head>
+<body>
+    <body>
+        <div class="navbar">
+            <img src="imgs/icones/logo.png" alt="logo coqueiral" class="logo">
+            <div class="nav-icon-container">
+                <img src="imgs/icones/ajudaazul 1.png" alt="ajuda" class="ajuda">
+                <img src="imgs/icones/Group 159.png"alt="perfil" class="perfil">
+                <img src="imgs/icones/Group 173.png"alt="notificação" class="notificacao">
+            
+            </div>
+             <button id="menuBtn" class="menu-button"><i class="fas fa-bars"></i></button> 
+            
+            <div class="header-inner-content show-menu">
+                <nav>
+                    <ul>
+                       <a href="inicio.html"><li>INÍCIO</li></a> 
+                        <li> - </li>
+                        <li>SOBRE</li>
+                        <li> - </li>
+                        <li>ÉTICA</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    
+    <div class="container">
+        <h2>Cadastre-se</h2>
+        <form id="cadastroForm">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="sobrenome">Sobrenome:</label>
+                <input type="text" id="sobrenome" name="sobrenome" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmarSenha">Repetir Senha:</label>
+                <input type="password" id="confirmarSenha" name="confirmarSenha" required>
+            </div>
+            <div class="form-group">
+                <label for="cpf">CPF:</label>
+                <input type="text" id="cpf" name="cpf" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="000.000.000-00">
+                <small>Informe o CPF no formato 000.000.000-00</small>
+            </div>
+            <div class="form-group">
+                <label for="dataNascimento">Data de Nascimento:</label>
+                <input type="date" id="dataNascimento" name="dataNascimento" required>
+            </div>
+            <div class="form-group">
+            <label>
+                    <input type="checkbox" required> <small>Aceito os termos de uso para estar na plataforma.</small>
+            </label>
+            </div>
+            <button type="submit" class="btn-cadastrar">CADASTRAR AGORA</button>
+        </form>
+        <hr>
+         <a href="login.html"><button class="btn-login" onclick="window.location.href='login.html'">JÁ TEM UMA CONTA? FAÇA SEU LOGIN</button> </a>
+    </div>
+    <footer>
+        <hr>
+          <div class="geral">
+            <h4>Contato</h4>
+            <p><a href="#">coqueiralrecife@contato.br</a></p>
+            <h4>© 2024 BY COQUEIRAL</h4>
+          </div>
+    </footer>
+</body>
+</html>

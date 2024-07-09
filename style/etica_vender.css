@@ -1,0 +1,469 @@
+/* Importando a fonte Josefin Sans */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Banner */
+.banner {
+    background-color: #303D4D;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.2rem;
+    width: 100%;
+}
+
+/* Barra de Busca */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+    position: relative; /* Ajuste para posicionamento absoluto do botão */
+    width: 100%;
+}
+
+.search-container input[type="text"] {
+    width: 80%;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    padding-right: 3rem; /* Espaço para o ícone */
+}
+
+.search-container button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 11%; /* Ajuste para alinhamento do botão */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.search-container button img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Linha Horizontal Completa */
+.full-width-line {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 2rem 0;
+    width: 100%;
+}
+
+/* Título Principal */
+.main-title {
+    color: #303D4D;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.5rem;
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 2rem 0;
+}
+
+/* Texto de Informação */
+.info-text {
+    color: #838383;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5rem;
+    margin: 1rem 2rem;
+}
+
+/* Destaque para a palavra "AQUI" */
+.info-text .highlight {
+    color: #303D4D;
+    font-weight: bold;
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+}
+
+/* Formulário de Contato */
+.contact-form {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 2rem auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #303D4D;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    background-color: #838383;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+}
+
+.contact-form button:hover {
+    background-color: #6b6b6b;
+}
+
+/*Rodapé */
+footer {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-content p {
+    margin: 0 10px;
+    font-size: 0.9rem;
+}
+
+/* Seção de Imagem e Texto */
+.image-text-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0;
+    flex-wrap: wrap; /* Para responsividade */
+}
+
+.responsive-image {
+    width: 505px;
+    height: 527px;
+    max-width: 100%; /* Para responsividade */
+    margin-right: 2rem; /* Espaço entre imagem e texto */
+}
+
+.responsive-text {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5rem;
+    color: #838383;
+    max-width: 600px;
+}
+
+.image-description {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.7rem;
+    color: #303D4D;
+    margin-top: 1rem;
+    text-align: left; /* Alinhamento à esquerda */
+    width: 100%; /* Garante que o texto ocupe toda a largura */
+    padding-left: 100px; /* Adiciona um recuo à esquerda */
+}
+
+.social-handle {
+    color: #838383; /* Cor para o identificador de mídia social */
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .banner {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+
+    .search-container input[type="text"] {
+        width: 90%;
+        font-size: 0.9rem;
+    }
+
+    .search-container button {
+        right: 5%; /* Ajuste para telas menores */
+    }
+
+    .search-container button img {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .info-text {
+        font-size: 1rem;
+        margin: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-form {
+        padding: 1rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.9rem;
+    }
+
+    .contact-form button {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-content p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .image-text-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .responsive-image {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .responsive-text {
+        text-align: center;
+    }
+}
+
+/*Estamos apenas testando o navbar*/
+
+.header-inner-content {
+    max-width: 1300px;
+    margin-left: 50px;
+    margin-right: auto;
+  }
+  .navbar {
+    background-color: #f0f0f0;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    box-shadow: 0px 0px 10px #f0f0f0;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+  }
+  
+  navbar>div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+  
+  .logo img {
+    height: 40px; 
+    width: auto; 
+    margin-right: 50px;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+  
+  .nav-icon-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-icon-container img {
+    position: fixed;
+    top: 10px; 
+    right: 10px; 
+    cursor: pointer;
+  }
+  
+  .nav-icon-container img:first-child {
+    margin-right: 1rem;
+  }
+  
+  nav ul li {
+    color: #838383;
+    margin-right: 1.5rem;
+    cursor: pointer;
+  }
+  
+  nav ul li:hover {
+    transform: translateY(-5px);
+    transition: all 0.2s;
+    font-weight: bold;
+  }
+  
+  .menu-button {
+    display: none;
+  }
+  .ajuda {
+    margin-right: 92px !important; 
+    margin-top: 10px;
+  }
+  .perfil {
+    margin-right: 200px;
+    margin-top: 14px;
+  }
+  .notificacao {
+    margin-right: 150px;
+    margin-top: 15px;
+  }
+  
+  .sacola {
+    margin-right: 90px;
+    margin-top: 10px;
+  }
+  
+  
+  footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  
+  .fa-magnifying-glass {
+      position: absolute; 
+      right: 10px; 
+      top: 50%; 
+      transform: translateY(-50%); 
+      color: #aaa; 
+      pointer-events: none; /
+  }
+  
+  .menu-button {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .menu-button i {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  @media only screen and (max-width: 900px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+  
+    .menu-button {
+        display: block;
+    }
+    .header-inner-content {
+      display: none;
+  }
+  
+    .header-inner-content {
+        display: none;
+        position: absolute;
+        top: 80px; 
+        left: 0;
+        width: 100%;
+        background-color: #f0f0f0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 99;
+    }
+  
+    @media only screen and (max-width: 900px) {
+      .show-menu {
+          display: block !important;
+      }
+  }
+  
+    .nav-icon-container img {
+        display: block;
+    }
+  
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+       
+    }
+  
+    nav ul li {
+        margin-bottom: 1rem;
+        transform: translateY(-5px);
+        transition: all 0.2s;
+        font-weight: bold;
+    }
+  }
+  
+  .nav-icon-container {
+    display: flex;
+    align-items: center;
+  }
+  .menu-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 10px; 
+    font-size: 1.5rem;
+    color: #333;
+    
+  }
+  
+  .menu-button:focus {
+    outline: none;
+  }
+  
+  .menu-button i {
+    margin: 0;
+    padding: 0;
+    margin-left: 20px;
+  }
+  .menu-button {
+      position: fixed;
+      top: 20px; 
+      right: 20px; 
+      z-index: 1000; 
+    }

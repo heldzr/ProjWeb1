@@ -11,84 +11,152 @@
 </head>
 
 <body>
-
-    <body>
-        <div class="navbar">
-            <img src="imgs/icones/logo.png" alt="logo coqueiral" class="logo">
-            <div class="nav-icon-container">
-                <img src="imgs/icones/ajudaazul 1.png" alt="ajuda" class="ajuda">
-                <img src="imgs/icones/Group 159.png" alt="perfil" class="perfil">
-                <img src="imgs/icones/Group 173.png" alt="notificação" class="notificacao">
-
-            </div>
-            <button id="menuBtn" class="menu-button"><i class="fas fa-bars"></i></button>
-
-            <div class="header-inner-content show-menu">
-                <nav>
-                    <ul>
-                        <li><a href="index.html">INÍCIO</a></li>
-                        <li> - </li>
-                        <li><a href="vender.html">VENDER NA COQUEIRAL</a></li>
-                        <li> - </li>
-                        <li><a href="etica.html">ÉTICA</a></li>
-                    </ul>
-                </nav>
-            </div>
+    <div class="navbar"> <!-- navbar do site -->
+        <img src="imgs/icones/logo.png" alt="logo coqueiral" class="logo">
+        <div class="nav-icon-container">
+            <img src="imgs/icones/ajudaazul 1.png" alt="ajuda" class="ajuda">
+            <img src="imgs/icones/Group 159.png" alt="perfil" class="perfil">
+            <img src="imgs/icones/Group 173.png" alt="notificação" class="notificacao">
         </div>
+        <button id="menuBtn" class="menu-button"><i class="fas fa-bars"></i></button>
 
-        <div class="container">
-            <h2>Cadastre-se</h2>
-            <form id="cadastroForm">
-                <div class="form-group">
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" required>
-                </div>
-                <div class="form-group">
-                    <label for="sobrenome">Sobrenome:</label>
-                    <input type="text" id="sobrenome" name="sobrenome" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="senha">Senha:</label>
-                    <input type="password" id="senha" name="senha" required>
-                </div>
-                <div class="form-group">
-                    <label for="confirmarSenha">Repetir Senha:</label>
-                    <input type="password" id="confirmarSenha" name="confirmarSenha" required>
-                </div>
-                <div class="form-group">
-                    <label for="cpf">CPF:</label>
-                    <input type="text" id="cpf" name="cpf" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
-                        placeholder="000.000.000-00">
-                    <small>Informe o CPF no formato 000.000.000-00</small>
-                </div>
-                <div class="form-group">
-                    <label for="dataNascimento">Data de Nascimento:</label>
-                    <input type="date" id="dataNascimento" name="dataNascimento" required>
-                </div>
-                <div class="form-group">
-                    <label>
-                        <input type="checkbox" required> <small>Aceito os termos de uso para estar na
-                            plataforma.</small>
-                    </label>
-                </div>
-                <button type="submit" class="btn-cadastrar">CADASTRAR AGORA</button>
-            </form>
-            <hr>
-            <a href="login.html"><button class="btn-login" onclick="window.location.href='login.html'">JÁ TEM UMA CONTA?
-                    FAÇA SEU LOGIN</button> </a>
+        <div class="header-inner-content show-menu"> <!-- Div para exibir o menu da navbar -->
+            <nav>
+                <ul>
+                    <li><a href="index.html">INÍCIO</a></li>
+                    <li> - </li>
+                    <li><a href="vender.html">VENDER NA COQUEIRAL</a></li>
+                    <li> - </li>
+                    <li><a href="etica.html">ÉTICA</a></li>
+                </ul>
+            </nav>
         </div>
-        <footer>
-            <hr>
-            <div class="geral">
-                <h4>Contato</h4>
-                <p><a href="#">coqueiralrecife@contato.br</a></p>
-                <h4>© 2024 BY COQUEIRAL</h4>
+    </div>
+
+    <div class="container"> <!-- Div de container que contem o formulario de cadastro -->
+        <h2>Cadastre-se</h2>
+        <form id="cadastroForm">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome">
             </div>
-        </footer>
-    </body>
+            <div class="form-group">
+                <label for="sobrenome">Sobrenome:</label>
+                <input type="text" id="sobrenome" name="sobrenome">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha">
+            </div>
+            <div class="form-group">
+                <label for="confirmarSenha">Repetir Senha:</label>
+                <input type="password" id="confirmarSenha" name="confirmarSenha">
+            </div>
+            <div class="form-group">
+                <label for="cpf">CPF:</label>
+                <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00">
+                <small>Informe o CPF no formato 000.000.000-00</small>
+            </div>
+            <div class="form-group">
+                <label for="dataNascimento">Data de Nascimento:</label>
+                <input type="date" id="dataNascimento" name="dataNascimento">
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="aceitoTermos"> <small>Aceito os termos de uso para estar na
+                        plataforma.</small>
+                </label>
+            </div>
+            <button type="submit" class="btn-cadastrar">CADASTRAR AGORA</button>
+        </form>
+        <div id="mensagemErro"></div> <!-- Div para exibir mensagens de erro -->
+        <hr>
+        <a href="login.html"><button class="btn-login" onclick="window.location.href='login.html'">JÁ TEM UMA CONTA?
+                FAÇA SEU LOGIN</button> </a>
+    </div>
+    <footer>
+        <hr>
+        <div class="geral">
+            <h4>Contato</h4>
+            <p><a href="#">coqueiralrecife@contato.br</a></p>
+            <h4>© 2024 BY COQUEIRAL</h4>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('cadastroForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Impede o envio do formulário para validação
+
+            var nome = document.getElementById('nome').value;
+            var sobrenome = document.getElementById('sobrenome').value;
+            var email = document.getElementById('email').value;
+            var senha = document.getElementById('senha').value;
+            var confirmarSenha = document.getElementById('confirmarSenha').value;
+            var cpf = document.getElementById('cpf').value;
+            var dataNascimento = document.getElementById('dataNascimento').value;
+            var aceitoTermos = document.getElementById('aceitoTermos').checked;
+            var msg = document.getElementById('mensagemErro'); // Elemento para exibir a mensagem de erro
+
+            try {
+                // Verifica se o campo 'nome' está vazio.
+                if (nome === '') {
+                    throw 'Por favor, preencha o campo nome.';
+                }
+                // Verifica se o campo 'nome' está preenchido corretamente.
+                if (!nome.match(/[a-z]/)){
+                    throw 'Por favor, preencha um nome válido. [a-z]';
+                }
+                // Verifica se o campo 'sobrenome' está vazio.
+                if (sobrenome === '') {
+                    throw 'Por favor, preencha o campo sobrenome.';
+                }
+                // Verifica se o campo 'sobrenome' está preenchido corretamente.
+                if (!sobrenome.match(/[a-z]/)){
+                    throw 'Por favor, preencha um sobrenome válido. [a-z]'
+                }
+
+                // Expressão regular para validação de email
+                var emailPattern = /^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$/;
+
+                if (!emailPattern.test(email)) {
+                    throw 'Por favor, insira um email válido.';
+                }
+                // Verifica se o campo 'senha' está preenchido
+                if (senha === '') {
+                    throw 'Por favor, preencha o campo senha.';
+                }
+                
+                if (senha !== confirmarSenha) {
+                    throw 'As senhas não coincidem.';
+                }
+                // expressão regular para validação do cpf
+                var cpfPattern = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/;
+                if (!cpfPattern.test(cpf)) {
+                    throw 'Por favor, insira um CPF válido no formato 000.000.000-00.';
+                }
+                // Verifica se o campo 'dataNascimento' está preenchido
+                if (dataNascimento === '') {
+                    throw 'Por favor, preencha o campo data de nascimento.';
+                }
+                // Verifica se os termos foram aceitos
+                if (!aceitoTermos) {
+                    throw 'Você deve aceitar os termos de uso para se cadastrar.';
+                }
+
+                // Se todas as validações passarem, o formulário pode ser enviado
+                this.submit();
+
+            } catch (err) {
+                msg.style.color = "#ff0000";
+                msg.innerHTML = "Erro: " + err; // Exibe a mensagem de erro na página
+                return false; // Impede o envio do formulário
+            }
+        });
+    </script>
+</body>
 
 </html>

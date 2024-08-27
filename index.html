@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style/inicio.css">
   <script src="https://kit.fontawesome.com/b09944a1ea.js" crossorigin="anonymous"></script>
   <script src="scr\navbar.js"></script>
+  <script src="scr/carousel.js" defer></script>
 </head>
 
 <body>
@@ -40,21 +41,23 @@
     <p>FRETE GRÁTIS NA PRIMEIRA COMPRA + 20% DESCONTO PARA ANIVERSARIANTE DO MÊS</p>
   </div>
 
-  <div class="slider">
-    <div class="slides">
-      <div class="slide first">
+  <div class="carousel"> <!-- Carousel Container -->
+    <div class="carousel-inner">
+      <div class="carousel-item">
         <img src="imgs/catalogo/picture4.png" alt="Confira nossa nova coleção" />
       </div>
-      <div class="slide">
+      <div class="carousel-item">
         <img src="imgs/catalogo/picture1.png" alt="Bem vindos a Coqueiral" />
       </div>
-      <div class="slide">
+      <div class="carousel-item">
         <img src="imgs/catalogo/picture2.png" alt="Coleção Ki Calor" />
       </div>
-      <div class="slide">
+      <div class="carousel-item">
         <img src="imgs/catalogo/picture3.png" alt="Feliz dia do cliente!" />
       </div>
     </div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
   </div>
 
   <div class="search-container"> <!-- Div para exibir campo de busca -->

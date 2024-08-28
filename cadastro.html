@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style/cadastro.css">
     <script src="https://kit.fontawesome.com/b09944a1ea.js" crossorigin="anonymous"></script>
     <script src="navbar.js"></script>
+    <script src="conectLocalStorage.js"></script>
 </head>
 
 <body>
@@ -107,7 +108,7 @@
                     throw 'Por favor, preencha o campo nome.';
                 }
                 // Verifica se o campo 'nome' está preenchido corretamente.
-                if (!nome.match(/[a-z]/)){
+                if (!nome.match(/[a-z]/)) {
                     throw 'Por favor, preencha um nome válido. [a-z]';
                 }
                 // Verifica se o campo 'sobrenome' está vazio.
@@ -115,7 +116,7 @@
                     throw 'Por favor, preencha o campo sobrenome.';
                 }
                 // Verifica se o campo 'sobrenome' está preenchido corretamente.
-                if (!sobrenome.match(/[a-z]/)){
+                if (!sobrenome.match(/[a-z]/)) {
                     throw 'Por favor, preencha um sobrenome válido. [a-z]'
                 }
 
@@ -129,7 +130,7 @@
                 if (senha === '') {
                     throw 'Por favor, preencha o campo senha.';
                 }
-                
+
                 if (senha !== confirmarSenha) {
                     throw 'As senhas não coincidem.';
                 }
@@ -146,8 +147,16 @@
                 if (!aceitoTermos) {
                     throw 'Você deve aceitar os termos de uso para se cadastrar.';
                 }
-
+                function salvarDados() {
+                    localStorage.setItem('nomeUsuario', nome);
+                    localStorage.setItem('sobrenomeUsuario', sobrenome);
+                    localStorage.setItem('emailUsuario', email);
+                    localStorage.setItem('senha', senha);
+                    localStorage.setItem('cpf', cpf);
+                    localStorage.setItem('dataNascimento', dataNascimento);
+                }
                 // Se todas as validações passarem, o formulário pode ser enviado
+                salvarDados();
                 this.submit();
 
             } catch (err) {

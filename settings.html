@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Conta</title>
+  <link rel="stylesheet" href="style/settings.css">
+  <script src="https://kit.fontawesome.com/b09944a1ea.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="navbar"> <!-- navbar do site -->
+        <img src="imgs/icones/logo.png" alt="logo coqueiral" class="logo">
+        <div class="nav-icon-container">
+            <img src="imgs/icones/ajudaazul 1.png" alt="ajuda" class="ajuda">
+            <img src="imgs/icones/Group 159.png" alt="perfil" class="perfil">
+            <img src="imgs/icones/Group 173.png" alt="notificação" class="notificacao">
+        </div>
+        <button id="menuBtn" class="menu-button"><i class="fas fa-bars"></i></button>
+
+        <div class="header-inner-content show-menu"> <!-- Div para exibir o menu da navbar -->
+            <nav>
+                <ul>
+                    <li><a href="index.html">INÍCIO</a></li>
+                    <li> - </li>
+                    <li><a href="etica.html">ÉTICA</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+  <section class="settingsSection">
+    <input type="checkbox" class="inputToggleSettings">
+    <div class="toggleRightSettings">
+        <i class="fa fa-chevron-right"></i>
+    </div>
+    <div class="toggleLeftSettings">
+        <i class="fa fa-chevron-left"></i>
+    </div>
+    <div class="containers1Settings">
+      <div class="profilesSettings">
+        <div class="profileIconsSettings">
+          <!-- Ícone do Perfil -->
+        </div>
+        <div class="profileInfosSettings">
+          <h3 id="userNome">Usuário</h3>
+        </div>
+      </div>
+      <div class="container1-iconsSettings">
+        <div class="iconsSettings">
+            <i class="fa fa-user"></i>
+          <p>Meu Perfil</p>
+        </div>
+        <div class="iconsSettings" id="logoutButton">
+            <i class="fa fa-sign-out-alt"></i>
+          <p>Sair da Conta</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="containers2Settings">
+      <form action="" class="formGroupsSettings" id="formgroupSettings">
+        <h1>INFORMAÇÕES DE PERFIL</h1>
+        <div class="personalInfosSettings">
+          <div class="profileInfosASettings">
+            <label for="name" class="labelSettings">Nome</label>
+            <input type="text" name="name" id="nameSettings" class="inputSettings" required>
+            <label for="username" class="labelSettings">Usuário</label>
+            <input type="text" name="username" id="usernameSettings" class="inputSettings" required>
+            <label for="birthDate" class="labelSettings">Data de Nascimento</label>
+            <input type="date" id="birthDateSettings" name="birthDate" class="inputSettings">
+          </div>
+          <div class="profileInfosBSettings">
+            <label for="lastName" class="labelSettings">Sobrenome</label>
+            <input type="text" name="sobrenome" id="lastNameSettings" class="inputSettings">
+            <label for="email" class="labelSettings">Email</label>
+            <input type="email" name="email" id="emailSettings" class="inputSettings" required>
+            <p id="verifyEmail">Verificar email</p>
+            <select id="genderSettings" class="inputSettings">
+              <option value="male">Masculino</option>
+              <option value="female">Feminino</option>
+              <option value="non-binary">Não binário</option>
+              <option value="other">Outro</option>
+            </select>
+          </div>
+        </div>
+        <h1>ENDEREÇO</h1>
+        <div class="adressInfosSettings">
+          <div class="adressInfosASettings">
+            <label for="CEP" class="labelSettings">CEP</label>
+            <input type="text" name="CEP" id="CEPSettings" class="inputSettings">
+            <label for="number" class="labelSettings">Número</label>
+            <input type="number" name="number" id="numberSettings" class="inputSettings">
+            <label for="bairro" class="labelSettings">Bairro</label>
+            <input type="text" name="bairro" id="bairroSettings" class="inputSettings">
+          </div>
+          <div class="adressInfosBSettings">
+            <label for="streetname" class="labelSettings">Nome da Rua</label>
+            <input type="text" name="streetname" id="streetnameSettings" class="inputSettings">
+            <label for="complemento" class="labelSettings">Complemento</label>
+            <input type="text" id="complementoSettings" class="inputSettings">
+            <label for="UF" class="labelSettings">UF</label>
+            <input type="text" name="UF" id="UFSettings" class="inputSettings">
+          </div>
+        </div>
+        <div>
+          <button type="submit" class="formBtnSettings">Salvar</button>
+        </div>
+        <div class="deleteAccountSettings">
+          <button id="deleteAccountBtn" class="deleteBtnSettings">
+            Apagar conta
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Modal para Apagar Conta -->
+  <div id="modal1" class="modalSettings" style="display: none;">
+    <div class="modal-contentSettings">
+      <p class='modalPSettings'>Tem certeza que deseja apagar a conta?</p>
+      <div class='modalBtnSettings'>
+        <button id="cancelDeleteButton" class='formBtnSettings'>Cancelar</button>
+        <button id="confirmDeleteButton" class='formBtnSettings'>Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para Logout -->
+  <div id="logoutModal" class="logoutModalOverlaySettings" style="display: none;">
+    <div class="logoutModalContentSettings">
+      <h2>Deseja realmente sair da conta?</h2>
+      <div class="logoutModalButtonsSettings">
+        <button id="cancelLogoutButton" class="cancelButtonSettings">Cancelar</button>
+        <button id="confirmLogoutButton" class="confirmButtonSettings">Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script para controlar os modais -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+            const nome = localStorage.getItem('nomeUsuario');
+            const userNomeElement = document.getElementById('userNome');
+            if(nome){
+                userNomeElement.textContent = nome;
+            } else {
+                userNomeElement.textContent = 'Usuário';
+            }
+    })
+    document.addEventListener('DOMContentLoaded', function() {
+        // Elementos do Modal1 (Apagar conta)
+        const modal1 = document.getElementById('modal1');
+        const deleteAccountBtn = document.getElementById('deleteAccountBtn');
+        const cancelDeleteButton = document.getElementById('cancelDeleteButton');
+        const confirmDeleteButton = document.getElementById('confirmDeleteButton');
+
+        deleteAccountBtn.addEventListener('click', function(event) {
+            event.preventDefault(); // Evita o envio do formulário
+            modal1.style.display = 'block';
+        });
+
+        cancelDeleteButton.addEventListener('click', function() {
+            modal1.style.display = 'none';
+        });
+
+        confirmDeleteButton.addEventListener('click', function() {
+            modal1.style.display = 'none';
+            localStorage.clear();
+            window.location.href = 'index.html';
+            console.log('Conta apagada');
+        });
+
+        // Elementos do LogoutModal
+        const logoutModal = document.getElementById('logoutModal');
+        const logoutButton = document.getElementById('logoutButton');
+        const cancelLogoutButton = document.getElementById('cancelLogoutButton');
+        const confirmLogoutButton = document.getElementById('confirmLogoutButton');
+
+        logoutButton.addEventListener('click', function() {
+            logoutModal.style.display = 'block';
+        });
+
+        cancelLogoutButton.addEventListener('click', function() {
+            logoutModal.style.display = 'none';
+        });
+
+        confirmLogoutButton.addEventListener('click', function() {
+            // Lógica para o logout aqui
+            console.log('Usuário deslogado');
+            window.location.href = 'index.html'; // Redireciona para a página inicial
+        });
+    });
+  </script>
+</body>
+</html>
